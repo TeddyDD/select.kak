@@ -17,7 +17,7 @@ pathogen-infect /home/user/repositories/github.com/alexherbo2/select.kak
 ## Usage
 
 ```
-select-keep-(not)-matching {list} {command}
+select- {list} {command}
 ```
 
 - `list`: Element list
@@ -27,17 +27,28 @@ select-keep-(not)-matching {list} {command}
 
 ``` kak
 define-command test %{
-  select-keep-not-matching 'foo' 'bar' 'baz' 'qux' %{ select-keep-matching %arg(@) %{
+  select- 'foo' 'bar' 'baz' 'qux' %{
     echo %arg(@)
-  }}
-  execute-keys -save-regs '' 'qux<ret>'
+  }
 }
 ```
 
 ## Commands
 
-- `select-keep-matching` `list` `command`: Keep selections that match the given regex and execute command
-- `select-keep-not-matching` `list` `command`: Clear selections that match the given regex and execute command
+### Select
+
+- <kbd>s</kbd>: Select (Keep matching)
+- <kbd>r</kbd>: Reject (Keep not matching)
+- <kbd>Return</kbd>: Validate
+- <kbd>Tab</kbd>: Toggle multi-selection mode
+- <kbd>d</kbd>: Delete (Main)
+- <kbd>u</kbd>: Undo (All)
+- <kbd>j</kbd>: Down
+- <kbd>k</kbd>: Up
+
+### Command
+
+- `select-` `list` `command`: Enter in Select mode using the given list and command to execute
 
 [Kakoune]: http://kakoune.org
 [IRC]: https://webchat.freenode.net?channels=kakoune
