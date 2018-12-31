@@ -30,7 +30,7 @@ define-command test %{
   select-keep-not-matching 'foo' 'bar' 'baz' 'qux' %{ select-keep-matching %arg(@) %{
     echo %arg(@)
   }}
-  execute-keys 'qux'
+  execute-keys -save-regs '' 'qux<ret>'
 }
 ```
 
