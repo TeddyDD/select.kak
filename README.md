@@ -8,6 +8,13 @@
 
 [![asciicast](https://asciinema.org/a/219413.svg)](https://asciinema.org/a/219413)
 
+## Projects
+
+Some other projects relying on Select:
+
+- [Portal]
+- [Yank Ring]
+
 ## Installation
 
 ### [Pathogen]
@@ -56,3 +63,5 @@ define-command test %{
 [IRC]: https://webchat.freenode.net?channels=kakoune
 [IRC Badge]: https://img.shields.io/badge/IRC-%23kakoune-blue.svg
 [Pathogen]: https://github.com/alexherbo2/pathogen.kak
+[Portal]: https://github.com/alexherbo2/portal.kak
+[Yank Ring]: https://github.com/alexherbo2/yank-ring.kak
