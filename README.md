@@ -6,6 +6,8 @@
 
 > [Kakoune] extension to select things.
 
+[![asciicast](https://asciinema.org/a/219413.svg)](https://asciinema.org/a/219413)
+
 ## Installation
 
 ### [Pathogen]
