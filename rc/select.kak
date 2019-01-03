@@ -27,15 +27,12 @@ define-command select- -params .. -docstring 'Enter in Select mode using the giv
   map window select 'u' -docstring 'Undo (All)' ':<space>select-undo<ret>'
   map window select 'j' -docstring 'Down' ':<space>select-move-down<ret>'
   map window select 'k' -docstring 'Up' ':<space>select-move-up<ret>'
+  map window select 'q' -docstring 'Quit' ':<space>select-quit<ret>'
   # Select
   select-mode-enter
   # Issue: ModeChange hook doesn’t handle User modes
   # https://github.com/mawww/kakoune/issues/2672
-  hook window NormalIdle '' %{
-    delete-buffer
-    # Hide potential previous messages when canceling
-    echo
-  }
+  hook window NormalIdle '' 'select-mode-enter'
 }
 
 # Public
@@ -92,6 +89,12 @@ define-command -hidden select-move-down %{
 
 define-command -hidden select-move-up %{
   select-execute-keys '('
+}
+
+define-command -hidden select-quit %{
+  delete-buffer
+  # Hide potential previous messages when canceling
+  echo
 }
 
 # Private

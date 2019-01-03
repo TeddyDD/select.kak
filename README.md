@@ -54,6 +54,7 @@ define-command test %{
 - <kbd>u</kbd>: Undo (All)
 - <kbd>j</kbd>: Down
 - <kbd>k</kbd>: Up
+- <kbd>q</kbd>: Quit
 
 ### Command
 
