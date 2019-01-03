@@ -60,12 +60,18 @@ define-command -hidden select-toggle-multiple-selections %{ evaluate-commands %s
   if test $kak_opt_select_multiple_selections = true; then
     printf '
       set-option current select_multiple_selections false
-      select-mode-enter Multi-selection turned off
+      set-face window SecondarySelection default,default
+      set-face window SecondaryCursor default,default
+      set-face window SecondaryCursorEol default,default
+      select-mode-enter
     '
   else
     printf '
       set-option current select_multiple_selections true
-      select-mode-enter Multi-selection turned on
+      unset-face window SecondarySelection
+      unset-face window SecondaryCursor
+      unset-face window SecondaryCursorEol
+      select-mode-enter
     '
   fi
 }}
