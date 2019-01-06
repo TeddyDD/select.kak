@@ -56,7 +56,7 @@ define-command -hidden select-validate %{ evaluate-commands %sh{
 define-command -hidden select-toggle-multiple-selections %{ evaluate-commands %sh{
   if test $kak_opt_select_multiple_selections = true; then
     printf '
-      set-option current select_multiple_selections false
+      set-option window select_multiple_selections false
       set-face window SecondarySelection default,default
       set-face window SecondaryCursor default,default
       set-face window SecondaryCursorEol default,default
@@ -64,7 +64,7 @@ define-command -hidden select-toggle-multiple-selections %{ evaluate-commands %s
     '
   else
     printf '
-      set-option current select_multiple_selections true
+      set-option window select_multiple_selections true
       unset-face window SecondarySelection
       unset-face window SecondaryCursor
       unset-face window SecondaryCursorEol
