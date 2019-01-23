@@ -17,7 +17,7 @@ define-command select- -params .. -docstring 'Enter in Select mode using the giv
   set-register A %reg(.)
   set-register dquote %reg(A)
   # Split arguments with new line
-  execute-keys '%<a-d><a-P>)<a-;>Zi<ret><esc>gg<a-d>z'
+  execute-keys '%<a-R>)<a-;>Zi<ret><esc>gg<a-d>z'
   # Mappings
   map window select 's' -docstring 'Select (Keep matching)' ':<space>select-select<ret>'
   map window select 'r' -docstring 'Reject (Keep not matching)' ':<space>select-reject<ret>'
@@ -119,11 +119,11 @@ define-command -hidden select-filter -params .. %{
   set-register dquote %reg(.)
   prompt %arg(2) %{
     # Restore selections
-    execute-keys '%<a-d><a-P>)<a-;>Zi<ret><esc>gg<a-d>z'
+    execute-keys '%<a-R>)<a-;>Zi<ret><esc>gg<a-d>z'
     set-register / %val(text)
     execute-keys "%arg(1)<ret>"
     # Update selections
-    execute-keys 'y%<a-d><a-P>)<a-;>Zi<ret><esc>gg<a-d>z'
+    execute-keys 'y%<a-R>)<a-;>Zi<ret><esc>gg<a-d>z'
     # Select
     select-mode-enter
   } -on-change %{ evaluate-commands -save-regs 'C' %{
@@ -131,11 +131,11 @@ define-command -hidden select-filter -params .. %{
     evaluate-commands -buffer %reg(N) %{
       try %{
         # Restore selections
-        execute-keys '%<a-d><a-P>)<a-;>Zi<ret><esc>gg<a-d>z'
+        execute-keys '%<a-R>)<a-;>Zi<ret><esc>gg<a-d>z'
         set-register / %val(text)
         execute-keys "%arg(1)<ret>"
         # Update selections
-        execute-keys 'y%<a-d><a-P>)<a-;>Zi<ret><esc>gg<a-d>z'
+        execute-keys 'y%<a-R>)<a-;>Zi<ret><esc>gg<a-d>z'
         # Update view
         evaluate-commands -client %reg(C) \
           evaluate-commands select %val(selections_desc)
@@ -144,7 +144,7 @@ define-command -hidden select-filter -params .. %{
       }
     }
   }} -on-abort %{
-    execute-keys '%<a-d><a-P>)<a-;>Zi<ret><esc>gg<a-d>z'
+    execute-keys '%<a-R>)<a-;>Zi<ret><esc>gg<a-d>z'
     # Select
     select-mode-enter
   }
