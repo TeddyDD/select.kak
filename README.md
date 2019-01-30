@@ -13,7 +13,7 @@
 Some other projects relying on Select:
 
 - [Portal]
-- [Yank Ring]
+- <s>[Yank Ring]</s> (2019-01-28)
 
 ## Installation
 
