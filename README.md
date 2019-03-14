@@ -60,7 +60,7 @@ define-command test %{
 
 - `select-` `list` `command`: Enter in Select mode using the given list and command to execute
 
-[Kakoune]: http://kakoune.org
+[Kakoune]: https://kakoune.org
 [IRC]: https://webchat.freenode.net?channels=kakoune
 [IRC Badge]: https://img.shields.io/badge/IRC-%23kakoune-blue.svg
 [Pathogen]: https://github.com/alexherbo2/pathogen.kak
