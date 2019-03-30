@@ -19,15 +19,15 @@ define-command select- -params .. -docstring 'Enter in Select mode using the giv
   # Split arguments with new line
   execute-keys '%<a-R>)<a-;>Zi<ret><esc>gg<a-d>z'
   # Mappings
-  map window select 's' -docstring 'Select (Keep matching)' ':<space>select-select<ret>'
-  map window select 'r' -docstring 'Reject (Keep not matching)' ':<space>select-reject<ret>'
-  map window select '<ret>' -docstring 'Validate' ':<space>select-validate<ret>'
-  map window select '<tab>' -docstring 'Toggle multi-selection mode' ':<space>select-toggle-multiple-selections<ret>'
-  map window select 'd' -docstring 'Delete (Main)' ':<space>select-delete<ret>'
-  map window select 'u' -docstring 'Undo (All)' ':<space>select-undo<ret>'
-  map window select 'j' -docstring 'Down' ':<space>select-move-down<ret>'
-  map window select 'k' -docstring 'Up' ':<space>select-move-up<ret>'
-  map window select 'q' -docstring 'Quit' ':<space>select-quit<ret>'
+  map window select 's' -docstring 'Select (Keep matching)' ': select-select<ret>'
+  map window select 'r' -docstring 'Reject (Keep not matching)' ': select-reject<ret>'
+  map window select '<ret>' -docstring 'Validate' ': select-validate<ret>'
+  map window select '<tab>' -docstring 'Toggle multi-selection mode' ': select-toggle-multiple-selections<ret>'
+  map window select 'd' -docstring 'Delete (Main)' ': select-delete<ret>'
+  map window select 'u' -docstring 'Undo (All)' ': select-undo<ret>'
+  map window select 'j' -docstring 'Down' ': select-move-down<ret>'
+  map window select 'k' -docstring 'Up' ': select-move-up<ret>'
+  map window select 'q' -docstring 'Quit' ': select-quit<ret>'
   # Select
   select-mode-enter
   # Issue: ModeChange hook doesn’t handle User modes
